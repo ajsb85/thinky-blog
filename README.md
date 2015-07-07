@@ -1,5 +1,4 @@
-# Thinky - RethinkDB - Angular -  Express - example
-
+# Thinky - RethinkDB - Angular Material -  Express 
 
 This app is a simple blog with posts, comments and authors.
 
