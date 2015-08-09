@@ -114,13 +114,13 @@ function DeletePostCtrl($scope, $http, $location, $routeParams) {
 }
 
 // Controller to read an author
-function AuthorCtrl($scope, $http) {
+/*function AuthorCtrl($scope, $http) {
     // Get data
     $http.get('/api/authors').
         success(function(data, status, headers, config) {
             $scope.authors = data.authors;
         });
-}
+}*/
 
 // Controller to read just an author
 function ReadAuthorCtrl($scope, $http, $routeParams) {
@@ -132,7 +132,7 @@ function ReadAuthorCtrl($scope, $http, $routeParams) {
 }
 
 // Controller to read just an author
-function AddAuthorCtrl($scope, $http, $location) {
+/*function AddAuthorCtrl($scope, $http, $location) {
     $scope.form = {}
 
     // Add an author
@@ -142,7 +142,7 @@ function AddAuthorCtrl($scope, $http, $location) {
             $location.path('/authors');
         });
     };
-}
+}*/
 
 // Controller to edit an author
 function EditAuthorCtrl($scope, $http, $location, $routeParams) {

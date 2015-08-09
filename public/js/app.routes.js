@@ -9,43 +9,53 @@
     $routeProvider.
       when('/', {
         templateUrl: 'partials/index',
-        controller: 'IndexCtrl'
+        controller: 'IndexCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/addPost', {
         templateUrl: 'partials/addPost',
-        controller: 'AddPostCtrl'
+        controller: 'AddPostCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/fullPost/:id', {
         templateUrl: 'partials/fullPost',
-        controller: 'FullPostCtrl' 
+        controller: 'FullPostCtrl',
+        controllerAs : 'ctrl' 
       }).
       when('/editPost/:id', {
         templateUrl: 'partials/editPost',
-        controller: 'EditPostCtrl'
+        controller: 'EditPostCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/deletePost/:id', {
         templateUrl: 'partials/deletePost',
-        controller: 'DeletePostCtrl'
+        controller: 'DeletePostCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/authors', {
         templateUrl: 'partials/authors',
-        controller: 'AuthorCtrl'
+        controller: 'AuthorCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/editAuthor/:id', {
         templateUrl: 'partials/editAuthor',
-        controller: 'EditAuthorCtrl'
+        controller: 'EditAuthorCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/addAuthor', {
         templateUrl: 'partials/addAuthor',
-        controller: 'AddAuthorCtrl'
+        controller: 'AddAuthorCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/readAuthor/:id', {
         templateUrl: 'partials/readAuthor',
-        controller: 'ReadAuthorCtrl'
+        controller: 'ReadAuthorCtrl',
+        controllerAs : 'ctrl'
       }).
       when('/deleteAuthor/:id', {
         templateUrl: 'partials/deleteAuthor',
-        controller: 'DeleteAuthorCtrl'
+        controller: 'DeleteAuthorCtrl',
+        controllerAs : 'ctrl'
       }).
       otherwise({
         redirectTo: '/'

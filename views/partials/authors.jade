@@ -1,5 +1,5 @@
 //p There are {{posts.length}} posts
-div.author(ng-repeat='author in authors')
+div.author(ng-repeat='author in ctrl.authors')
     div.actions
         a.edit(href='/editAuthor/{{author.id}}') Edit
         a.delete(href='/deleteAuthor/{{author.id}}') Delete

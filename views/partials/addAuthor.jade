@@ -1,10 +1,10 @@
 h2 Add an author
 label(for='name') Name: 
-input.title.form-control(ng-model='form.name', name='name', type='text')
+input.title.form-control(ng-model='ctrl.form.name', name='name', type='text')
 label(for='email') Email: 
-input.title.form-control(ng-model='form.email', name='email', type='text')
+input.title.form-control(ng-model='ctrl.form.email', name='email', type='text')
 label(for='website') Website: 
-input.title.form-control(ng-model='form.website', name='website', type='text')
+input.title.form-control(ng-model='ctrl.form.website', name='website', type='text')
 
 p
-    button.submit_author.btn(ng-click='submitAuthor()') Submit Author
+    button.submit_author.btn(ng-click='ctrl.submitAuthor()') Submit Author

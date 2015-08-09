@@ -6,7 +6,8 @@
   'use strict';
 
   angular.module('myApp', [
-    'ngRoute'
+    'ngRoute',
+    'thinkyBlog.service'
   ]);
 
 })();
