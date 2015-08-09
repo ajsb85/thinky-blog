@@ -20,7 +20,8 @@
 			getAuthors 	: getAuthors,
 			getAuthor 	: getAuthor,
 			addAuthor 	: addAuthor,
-			editAuthor 	: editAuthor
+			editAuthor 	: editAuthor,
+			deleteAuthor: deleteAuthor
 		}
 		
 		/**
@@ -46,8 +47,7 @@
 				method : 'GET',
 				url : URI.AUTHOR + id
 			});
-			return request.then(function(response){
-				$log.debug('getAuthor - service',response);
+			return request.then(function(response){				
 				return response.data;
 			})
 		}
@@ -70,7 +70,7 @@
 		/**
 		* @description Edit author
 		* @param id - Author Id.
-		* @param obj - Author to edit
+		* @param obj - Author to edit.
 		*/
 		function editAuthor (id, obj) {
 			var request = $http({
@@ -79,10 +79,25 @@
 				data : obj
 			});
 
-			return request.then(function(response){
-				$log.debug('editAuthor - service',response);
+			return request.then(function(response){				
 				return response.data;
 			});
+		}
+
+		/**
+		* @description Delete  author
+		* @param id - Author id.
+		*/
+		function deleteAuthor (id) {
+			var request = $http({
+				method : 'DELETE',
+				url : URI.AUTHOR + id
+			});
+
+			return request.then(function(response){
+				$log.debug('delete Author',response)
+				return response.data;
+			})
 		}
 		
 
