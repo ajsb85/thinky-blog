@@ -54,7 +54,7 @@
 
 		/**
 		* @description Add new Author.
-		* @param object.
+		* @param obj - Author to add
 		*/
 		function addAuthor (obj) {
 			var request = $http({
@@ -68,8 +68,9 @@
 		}
 
 		/**
-		*
-		*
+		* @description Edit author
+		* @param id - Author Id.
+		* @param obj - Author to edit
 		*/
 		function editAuthor (id, obj) {
 			var request = $http({
