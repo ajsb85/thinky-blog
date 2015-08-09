@@ -18,7 +18,9 @@
 
 		return {
 			getAuthors 	: getAuthors,
-			addAuthor 	: addAuthor
+			getAuthor 	: getAuthor,
+			addAuthor 	: addAuthor,
+			editAuthor 	: editAuthor
 		}
 		
 		/**
@@ -31,6 +33,21 @@
 				url : URI.AUTHORS
 			});			
 			return request.then(function(response){				
+				return response.data;
+			})
+		}
+
+		/**
+		* @description Get author by id.
+		* @param author id.
+		*/
+		function getAuthor (id) {
+			var request = $http({
+				method : 'GET',
+				url : URI.AUTHOR + id
+			});
+			return request.then(function(response){
+				$log.debug('getAuthor - service',response);
 				return response.data;
 			})
 		}
@@ -49,10 +66,24 @@
 				return response.data
 			});
 		}
+
 		/**
-		* @description 
-		* @param 
+		*
+		*
 		*/
+		function editAuthor (id, obj) {
+			var request = $http({
+				method : 'PUT',
+				url : URI.AUTHOR + id,
+				data : obj
+			});
+
+			return request.then(function(response){
+				$log.debug('editAuthor - service',response);
+				return response.data;
+			});
+		}
+		
 
 		
 
