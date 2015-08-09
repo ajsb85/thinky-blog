@@ -29,8 +29,20 @@ html(ng-app="myApp")
             block body
 
     script(src='js/lib/angular/angular.js')
+    script(src='js/lib/angular/angular-route.js')
     script(src='js/app.js')
-    script(src='js/services.js')
-    script(src='js/controllers.js')
-    script(src='js/filters.js')
-    script(src='js/directives.js')
+    script(src='js/app.routes.js')
+    <!-- Index -->
+    script(src='js/index/index.controller.js')
+    <!-- Post -->
+    script(src='js/post/addPost.controller.js')
+    script(src='js/post/deletePost.controller.js')
+    script(src='js/post/editPost.controller.js')
+    script(src='js/post/fullPost.controller.js')    
+    <!-- Author -->
+    script(src='js/author/author.controller.js')
+    script(src='js/author/addAuthor.controller.js')
+    script(src='js/author/deleteAuthor.controller.js')
+    script(src='js/author/editAuthor.controller.js')
+    script(src='js/author/readAuthor.controller.js')
+
