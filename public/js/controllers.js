@@ -10,14 +10,14 @@ var commentForms = {
 };
 
 // Controller for the list of posts
-function IndexCtrl($scope, $http) {
+/*function IndexCtrl($scope, $http) {
 		$scope.commentForms = commentForms;
 		// Get data
 		$http.get('/api/posts').
 				success(function(data, status, headers, config) {
 						$scope.posts = data.posts;
 				});
-}
+}*/
 
 // Controller for the full view of a post
 function fullPostCtrl($scope, $http, $routeParams, $route) {
@@ -52,7 +52,7 @@ function fullPostCtrl($scope, $http, $routeParams, $route) {
 }
 
 // Controller to add a post
-function AddPostCtrl($scope, $http, $location) {
+/*function AddPostCtrl($scope, $http, $location) {
 		//TODO Remove this empty option...
 		$scope.form = {};
 
@@ -69,7 +69,7 @@ function AddPostCtrl($scope, $http, $location) {
 								$location.path('/');
 						});
 				};
-}
+}*/
 
 // Controller to edit a post
 function EditPostCtrl($scope, $http, $location, $routeParams) {
@@ -123,13 +123,13 @@ function DeletePostCtrl($scope, $http, $location, $routeParams) {
 }*/
 
 // Controller to read just an author
-function ReadAuthorCtrl($scope, $http, $routeParams) {
+/*function ReadAuthorCtrl($scope, $http, $routeParams) {
 		// Get data
 		$http.get('/api/author/' + $routeParams.id).
 				success(function(data) {
 						$scope.author = data.author;
 				});
-}
+}*
 
 // Controller to read just an author
 /*function AddAuthorCtrl($scope, $http, $location) {
@@ -145,7 +145,7 @@ function ReadAuthorCtrl($scope, $http, $routeParams) {
 }*/
 
 // Controller to edit an author
-function EditAuthorCtrl($scope, $http, $location, $routeParams) {
+/*function EditAuthorCtrl($scope, $http, $location, $routeParams) {
 		$scope.form = {};
 
 		// Get data
@@ -161,10 +161,10 @@ function EditAuthorCtrl($scope, $http, $location, $routeParams) {
 								$location.url('/readAuthor/' + $routeParams.id);
 						});
 		};
-}
+}*/
 
 // Controller to delete an author
-function DeleteAuthorCtrl($scope, $http, $location, $routeParams) {
+/*function DeleteAuthorCtrl($scope, $http, $location, $routeParams) {
 		// Get data
 		$http.get('/api/author/' + $routeParams.id).
 				success(function(data) {
@@ -183,4 +183,4 @@ function DeleteAuthorCtrl($scope, $http, $location, $routeParams) {
 		$scope.home = function () {
 				$location.url('/authors');
 		};
-}
+}*/

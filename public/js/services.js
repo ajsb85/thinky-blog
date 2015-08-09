@@ -7,7 +7,8 @@
 			AUTHOR : '/api/author/',
 			AUTHORS : '/api/authors',
 			COMMENT : '/api/comment',
-			POSTS : '/api/posts',	
+			POST : '/api/post/',	
+			POSTS : '/api/posts/',
 			POST_AUTHORS : '/api/post_and_authors/'	
 
 		})		
@@ -17,11 +18,19 @@
 	function thinkyBlog ($http, $log, URI){
 
 		return {
+			// Authors
 			getAuthors 	: getAuthors,
 			getAuthor 	: getAuthor,
 			addAuthor 	: addAuthor,
 			editAuthor 	: editAuthor,
-			deleteAuthor: deleteAuthor
+			deleteAuthor: deleteAuthor,
+			// Posts
+			getPosts    : getPosts,
+			addPost     : addPost,
+			editPost    : editPost,
+			// Others
+			postsAndAuthors : postsAndAuthors
+
 		}
 		
 		/**
@@ -94,14 +103,68 @@
 				url : URI.AUTHOR + id
 			});
 
-			return request.then(function(response){
-				$log.debug('delete Author',response)
+			return request.then(function(response){				
 				return response.data;
 			})
 		}
 		
+		/**
+		* @description - Get all Posts
+		* @param - none
+		*/
+		function getPosts () {
+			var request = $http({
+				method : 'GET',
+				url : URI.POSTS
+			});			
+			return request.then(function(response){				
+				return response.data;
+			})
+		}
 
-		
+		/**
+		* @description Add new Post.
+		* @param obj - Post to add.
+		*/
+		function addPost (obj) {
+			var request = $http({
+				method : 'POST',
+				url : URI.POST,
+				data : obj
+			});
+
+			return request.then(function(response){
+				return response.data;
+			})
+		}
+
+		/**
+		* @description Edit post
+		* @param id - Post id.
+		* @param obj - Post to edit.
+		*/
+		function editPost (id, obj) {
+			var request = $http({
+				method : 'PUT',
+				url : URI.POST + id,
+				data : obj
+			});
+
+			return request.then(function(response){				
+				return response.data;
+			});			
+		}
+
+		function postsAndAuthors (id) {
+			var request = $http({
+				method : 'GET',
+				url : URI.POST_AUTHORS + id				
+			});
+
+			return request.then(function(response){				
+				return response.data;
+			});				
+		}
 
 
 	}

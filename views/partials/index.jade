@@ -1,5 +1,5 @@
-//p There are {{posts.length}} posts
-div.post(ng-repeat='post in posts')
+//p There are {{ctrl.posts.length}} posts
+div.post(ng-repeat='post in ctrl.posts')
     div.actions
         a.edit(href='/editPost/{{post.id}}') Edit
         a.delete(href='/deletePost/{{post.id}}') Delete

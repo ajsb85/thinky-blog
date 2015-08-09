@@ -6,8 +6,19 @@
 	angular
 		.module('myApp')
 		.controller('IndexCtrl', indexCtrl);
+	
+	indexCtrl.$inject = ['$log', 'ThinkyBlogService']
+	function indexCtrl($log, ThinkyBlogService) {
+		var vm = this;
 
-	function indexCtrl() {
-		console.log('cargo!');
+		getPosts();
+
+		function getPosts () {
+			ThinkyBlogService.getPosts()
+				.then(function(data){
+					vm.posts = data.posts;
+					return vm.posts;
+				})
+		}
 	}
 })();

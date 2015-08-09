@@ -7,7 +7,7 @@
 		.module('myApp')
 		.controller('ReadAuthorCtrl', readAuthorCtrl);
 
-	readAuthorCtrl.$inject = ['$log','$routeParams','ThinkyBlogService']		
+	readAuthorCtrl.$inject = ['$log','$routeParams','ThinkyBlogService'];		
 	function readAuthorCtrl($log, $routeParams ,ThinkyBlogService) {
 		var vm = this;
 		var id = $routeParams.id;
