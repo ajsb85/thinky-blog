@@ -26,11 +26,15 @@
 			deleteAuthor: deleteAuthor,
 			// Posts
 			getPosts    : getPosts,
+			getPost     : getPost,
 			addPost     : addPost,
 			editPost    : editPost,
+			deletePost  : deletePost,
 			// Others
-			postsAndAuthors : postsAndAuthors
-
+			postsAndAuthors : postsAndAuthors,
+			// Comments
+			addComment 	 : addComment,
+			deleteComment : deleteComment 
 		}
 		
 		/**
@@ -123,6 +127,20 @@
 		}
 
 		/**
+		* @description - Get post by Id
+		* @param id - Post id.
+		*/
+		function getPost (id) {
+			var request = $http({
+				method : 'GET',
+				url : URI.POST + id
+			});			
+			return request.then(function(response){				
+				return response.data;
+			})
+		}
+
+		/**
 		* @description Add new Post.
 		* @param obj - Post to add.
 		*/
@@ -155,6 +173,25 @@
 			});			
 		}
 
+		/**
+		* @description Delete post
+		* @param id - Post id.
+		*/
+		function deletePost (id) {
+			var request = $http({
+				method : 'DELETE',
+				url : URI.POST + id				
+			});
+
+			return request.then(function(response){				
+				return response.data;
+			});			
+		}
+
+		/**
+		* @description 
+		* @param id - 
+		*/
 		function postsAndAuthors (id) {
 			var request = $http({
 				method : 'GET',
@@ -166,7 +203,37 @@
 			});				
 		}
 
+		/**
+		* @description Add Comment.
+		* @param obj - Comment object
+		*/
+		function addComment (obj) {
+			var request = $http({
+				method : 'POST',
+				url : URI.COMMENT,
+				data : obj								
+			});
 
+			return request.then(function(response){				
+				return response.data;
+			});		
+		}
+
+		/**
+		* @description Delete comment.
+		* @param id - Comment id.
+		*/
+		function deleteComment () {
+			var request = $http({
+				method : 'DELETE',
+				url : URI.COMMENT + id				
+			});
+
+			return request.then(function(response){				
+				return response.data;
+			});					
+		}
 	}
 
 })();
+
