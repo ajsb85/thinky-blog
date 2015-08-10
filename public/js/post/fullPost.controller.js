@@ -11,6 +11,12 @@
 	function fullPostCtrl ($log,$route,$routeParams,ThinkyBlogService) {
 		var vm = this;
 		var id = $routeParams.id;
+		var commentForms = {
+			0: 'No comment',
+			one: '{} comment',
+			other: '{} comments'
+		};
+		vm.commentForms = commentForms;
 		vm.form = {};
 		vm.submitComment = submitComment;
 		vm.deleteComment = deleteComment;
@@ -19,7 +25,7 @@
 
 		function getPost (id) {
 			ThinkyBlogService.getPost(id)
-				.then(function(data){					
+				.then(function(data){							
 					vm.post = data.post;
 					return vm.post;
 				})
@@ -27,7 +33,7 @@
 
 		function submitComment () {
 			vm.form.postId = id;
-			ThinkyBlogService.addComment()
+			ThinkyBlogService.addComment(vm.form)
 				.then(function (data){
 					$route.reload();
 				});
@@ -37,7 +43,7 @@
 		function deleteComment (id, $event) {
 			$event.preventDefault();
 			$event.stopPropagation();
-			ThinkyBlogService.deleteComment()
+			ThinkyBlogService.deleteComment(id)
 				.then(function (data){
 					$route.reload();
 				});

@@ -6,7 +6,7 @@
 		.constant('URI',{
 			AUTHOR : '/api/author/',
 			AUTHORS : '/api/authors',
-			COMMENT : '/api/comment',
+			COMMENT : '/api/comment/',
 			POST : '/api/post/',	
 			POSTS : '/api/posts/',
 			POST_AUTHORS : '/api/post_and_authors/'	
@@ -223,7 +223,7 @@
 		* @description Delete comment.
 		* @param id - Comment id.
 		*/
-		function deleteComment () {
+		function deleteComment (id) {
 			var request = $http({
 				method : 'DELETE',
 				url : URI.COMMENT + id				

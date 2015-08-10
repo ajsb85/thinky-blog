@@ -13,15 +13,15 @@ div.text {{ctrl.post.text}}
 
 h4.margin_top Comments
 p.comments_info
-    <ng-pluralize count="ctrl.post.comments.length" when="commentForms"></ng-pluralize>
+    <ng-pluralize count="ctrl.post.comments.length" when="ctrl.commentForms"></ng-pluralize>
 
 
 div.comment(ng-repeat='comment in ctrl.post.comments')
     div.actions
         a.delete(href='#', ng-click='ctrl.deleteComment(comment.id, $event)') Delete
 
-    | Posted by <strong>{{ctrl.comment.name}}</strong> on {{ctrl.comment.date}}
-    div.comment_content {{ctrl.comment.comment}}
+    | Posted by <strong>{{comment.name}}</strong> on {{comment.date}}
+    div.comment_content {{comment.comment}}
 
 h4.margin_top Add a comment
     
