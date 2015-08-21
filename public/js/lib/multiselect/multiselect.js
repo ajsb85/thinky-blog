@@ -123,7 +123,7 @@ angular.module("ui.multiselect", ["multiselect.tpl.html"])
 
         function getHeaderText() {
           if(isEmpty(modelCtrl.$modelValue) ||  modelCtrl.$modelValue.length == 0) {
-            scope.header = attrs.msHeader || "Todos";
+            scope.header = attrs.msHeader || "All";
             return scope.header;
           }
 
@@ -131,7 +131,7 @@ angular.module("ui.multiselect", ["multiselect.tpl.html"])
             if(attrs.msSelected) {
               scope.header = $interpolate(attrs.msSelected)(scope);
             } else {
-              scope.header = modelCtrl.$modelValue.length + " " + "seleccionados";
+              scope.header = modelCtrl.$modelValue.length + " " + "selected";
             }
 
           } else {
