@@ -5,6 +5,9 @@ input.title.form-control(ng-model='ctrl.form.title', name='title', type='text')
 label(for='author') Author:
 select(ng-model="ctrl.form.authorId", name="authorId", ng-options="c.id as c.name for c in ctrl.form.authors", ng-change="selectAction()") {{c.id}}
 
+label(for='visibleTo') Visible to:
+multiselect(data-multiple="true", options="c.name for c in ctrl.authors" ng-model="ctrl.form.viewers") 
+
 p Body:
 textarea.content.form-control(ng-model='ctrl.form.text', cols='50', rows='15')
 p
