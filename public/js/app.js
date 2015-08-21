@@ -7,6 +7,7 @@
 
   angular.module('myApp', [
     'ngRoute',
+    'ui.multiselect', 
     'thinkyBlog.service'
   ]);
 
