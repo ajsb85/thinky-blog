@@ -3,8 +3,10 @@ label(for='name') Name:
 input.title.form-control(ng-model='ctrl.form.name', name='name', type='text')
 label(for='email') Email: 
 input.title.form-control(ng-model='ctrl.form.email', name='email', type='text')
-label(for='website') Website: 
-input.title.form-control(ng-model='ctrl.form.website', name='website', type='text')
+label(for='company') Company: 
+input.title.form-control(ng-model='ctrl.form.company', name='company', type='text')
+label(for='author') Role:
+select(ng-model="ctrl.form.role", name="authorId", ng-options="c.name as c.name for c in ctrl.role", ng-disabled="authors.length == 0")
 
 p
     button.submit_author.btn(ng-click='ctrl.submitAuthor()') Submit Author
