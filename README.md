@@ -1,5 +1,7 @@
 # Thinky - RethinkDB - Angular Material -  Express 
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ajsb85/thinky-blog.svg)](https://greenkeeper.io/)
+
 This app is a simple blog with posts, comments and authors.
 
 The main purpose of this app is to show how to use [thinky](http://github.com/neumino/thinky)
